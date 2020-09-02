@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<style >
+  body
+{
+  
+ 
+  font font-family: Arial;
+  background:url("jobs1.jpeg"); 
+  background-size: cover;
+
+  height: 500px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+
+  
+}
+
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+/* Style the container for inputs */
+.box {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+/* Style all input fields */
+
+.in {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+.error {color: #FF0000;}
+
+
+</style>
+<script>
+
+function validateForm() {
+  var x = document.forms["jobs"]["fname"].value;
+  var y = document.forms["jobs"]["lname"].value;
+  var z = document.forms["jobs"]["email"].value;
+  var checkBox1 = document.getElementById("full_time");
+  var checkBox2 = document.getElementById("part_time");
+
+  if (x == "") 
+  {
+    alert("First name must be filled out");
+    return false;
+  }
+  if (y == "")
+  {
+      alert("lastname must be filled out");
+      return false;
+  } 
+
+  if(z == "")
+  {
+      alert("email must be filled out");
+      return false;
+  }
+
+  if(checkBox1.checked == false && checkBox2.checked == false)
+  {
+      alert("Please select job type");
+      return fasle;
+  }
+
+  else {
+      if(checkBox1.checked == true)
+      {
+          window.location.replace('https://www.indeed.co.in/Full-Time-jobs-in-Bengaluru,-Karnataka');
+      }
+      else window.location.replace('https://www.indeed.co.in/Part-Time-jobs-in-Bengaluru,-Karnataka');
+  }
+return false;
+}  
+
+</script>
+
+<body>
+
+<form  name="jobs"  class="in" method="POST"  onsubmit="return validateForm()">
+
+  First Name: <input type="text" class="form-elements" name="fname"><br>
+
+  Last Name: <input type="text" name="lname"><br>
+
+  E-mail: <input type="email" name="email">
+  
+  <br>
+  Gender:
+  <input type="radio" name="gender" value="female">Female
+  <input type="radio" name="gender" value="male">Male
+  <input type="radio" name="gender" value="other">Other
+  <br><br>
+
+  <b> Type of Job</b><br>
+  <input type="radio" name="type_of_job" id="full_time" value="full_time">Full Time<br>
+  <input type="radio" name="type_of_job" id="part_time" value="part_time">Part Time<br>
+  <button type="submit"  class="btn">Register</button>
+</form> 
+
+
+ 
+
+</body>
+</html>
